@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DKP 2027 | Pangkalan SMP Negeri 1 Sindang</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#f5f7fa;
+color:#222;
+overflow-x:hidden;
+}
+
+.hero{
+height:100vh;
+background:
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.70)),
+url('SAMPUL.jpeg') no-repeat center center/cover;
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.hero-content h1{
+font-size:60px;
+font-weight:900;
+color:white;
+text-shadow:0 5px 20px rgba(0,0,0,.5);
+}
+
+.hero-content h2{
+color:#ffd700;
+font-size:26px;
+margin-top:10px;
+}
+
+.hero-content p{
+color:white;
+max-width:700px;
+margin:20px auto;
+line-height:1.8;
+}
+
+.btn{
+display:inline-block;
+padding:14px 30px;
+margin:10px;
+background:#ffd700;
+color:#000;
+font-weight:700;
+border-radius:40px;
+text-decoration:none;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-4px);
+}
+
+/* MENU */
+nav{
+position:sticky;
+top:0;
+z-index:999;
+background:#0d47a1;
+padding:15px;
+text-align:center;
+box-shadow:0 3px 15px rgba(0,0,0,.2);
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:0 15px;
+font-weight:600;
+}
+
+section{
+padding:80px 8%;
+}
+
+.title{
+text-align:center;
+font-size:40px;
+color:#0d47a1;
+margin-bottom:50px;
+font-weight:800;
+}
+
+/* PEMBINA */
+.pembina{
+display:flex;
+flex-wrap:wrap;
+gap:40px;
+align-items:center;
+justify-content:center;
+}
+
+.pembina img{
+width:280px;
+height:350px;
+object-fit:cover;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+
+.bio{
+max-width:600px;
+}
+
+.bio h3{
+font-size:35px;
+color:#0d47a1;
+margin-bottom:10px;
+}
+
+.bio p{
+line-height:1.8;
+}
+/* PRATAMA */
+.pratama{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:40px;
+margin-top:20px;
+}
+
+.pratama-card{
+background:#fff;
+padding:20px;
+border-radius:20px;
+box-shadow:0 8px 20px rgba(0,0,0,.1);
+text-align:center;
+max-width:320px;
+transition:.4s;
+}
+
+.pratama-card:hover{
+transform:translateY(-8px);
+}
+
+.pratama-card img{
+width:260px;
+height:320px;
+object-fit:cover;
+border-radius:15px;
+border:5px solid #0d47a1;
+margin-bottom:15px;
+}
+
+.pratama-card h3{
+color:#0d47a1;
+font-size:26px;
+margin-bottom:8px;
+}
+
+.pratama-card p{
+line-height:1.7;
+}
+/* ANGGOTA */
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+.title{
+    text-align:center;
+    font-size:38px;
+    color:#0d47a1;
+    margin-bottom:40px;
+    font-weight:800;
+}
+
+.pembatas{
+    margin:80px auto;
+    width:80%;
+    border-top:4px dashed #0d47a1;
+    position:relative;
+}
+
+.pembatas::after{
+    content:"⚜️";
+    position:absolute;
+    top:-18px;
+    left:50%;
+    transform:translateX(-50%);
+    background:#f5f7fa;
+    padding:0 18px;
+    font-size:28px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+.card img{
+width:200px;
+height:200px;
+object-fit:cover;
+border-radius:12px;
+border:4px solid #0d47a1;
+margin-bottom:15px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+transition:.4s;
+}
+
+/* MATERI */
+.materi{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.materi a{
+background:white;
+padding:25px;
+border-radius:15px;
+text-decoration:none;
+color:#0d47a1;
+font-weight:700;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.materi a:hover{
+background:#0d47a1;
+color:white;
+}
+
+/* GALERI */
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+}
+
+.gallery img{
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:15px;
+transition:.4s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+.gallery-item{
+background:#fff;
+border-radius:18px;
+overflow:hidden;
+box-shadow:0 8px 20px rgba(0,0,0,.1);
+transition:.4s;
+}
+
+.gallery-item:hover{
+transform:translateY(-8px);
+box-shadow:0 15px 35px rgba(0,0,0,.2);
+}
+
+.gallery-item img{
+width:100%;
+height:250px;
+object-fit:cover;
+display:block;
+transition:.4s;
+}
+
+.gallery-item:hover img{
+transform:scale(1.05);
+}
+
+.gallery-info{
+padding:18px;
+}
+
+.gallery-info h3{
+color:#0d47a1;
+font-size:20px;
+margin-bottom:10px;
+}
+
+.gallery-info p{
+color:#555;
+line-height:1.7;
+font-size:15px;
+}
+
+/* FOOTER */
+footer{
+background:#0d47a1;
+color:white;
+text-align:center;
+padding:30px;
+}
+
+/* MUSIK */
+.music{
+    position:fixed;
+    top:12px;
+    right:12px;
+    z-index:9999;
+    background:rgba(255,255,255,.9);
+    padding:6px 8px;
+    border-radius:12px;
+    box-shadow:0 3px 12px rgba(0,0,0,.2);
+    backdrop-filter:blur(8px);
+}
+
+/* Kecilkan audio */
+.music audio{
+    width:180px;
+    height:32px;
+    display:block;
+}
+@media(max-width:768px){
+
+.hero-content h1{
+font-size:35px;
+}
+
+.hero-content h2{
+font-size:18px;
+}
+
+.title{
+font-size:30px;
+}
+
+.pembina{
+flex-direction:column;
+}
+}
+.logo-dkp{
+text-align:center;
+margin-bottom:40px;
+}
+
+.logo-dkp img{
+width:250px;
+max-width:90%;
+filter:drop-shadow(0 10px 20px rgba(0,0,0,.2));
+animation:logoFloat 3s ease-in-out infinite;
+}
+
+@keyframes logoFloat{
+0%,100%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(-10px);
+}
+}
+</style>
+</head>
+<body>
+
+<!-- MUSIK -->
+<div class="music">
+<audio controls autoplay loop>
+<source src="musik.mp3" type="audio/mpeg">
+</audio>
+</div>
+
+<!-- HERO -->
+<header class="hero">
+<div class="hero-content">
+<h1>DKP PEGASUS 2027</h1>
+<h2>PANGKALAN SMP NEGERI 1 SINDANG</h2>
+
+<p>
+Lakukan kebaikan 1% setiap hari dan pertahankan dengan konsisten. Perubahan kecil yang dilakukan secara terus-menerus akan menghasilkan dampak yang besar seiring berjalannya waktu. Sedikit demi sedikit, kebiasaan baik akan membentuk karakter, meningkatkan kemampuan, dan membawa kemajuan yang mungkin tidak langsung terasa. Tanpa disadari, kamu akan terus berkembang, menjadi pribadi yang lebih baik, lebih kuat, dan lebih bijaksana setiap harinya. Ingat, kesuksesan bukan hanya tentang perubahan besar dalam semalam, tetapi tentang langkah-langkah kecil yang dilakukan dengan penuh komitmen setiap hari.
+
+</p>
+
+<a href="#pembina" class="btn">Profil Pembina</a>
+<a href="#anggota" class="btn">Anggota DKP</a>
+<a href="#materi" class="btn">Materi Pramuka</a>
+<a href="#outpit" class="btn">Outfit</a>
+<a href="#format" class="btn">Format</a>
+
+</div>
+</header>
+
+<nav>
+    <a href="#pembina">Pembina</a>
+    <a href="#pratama">Pratama</a>
+    <a href="#anggota">Anggota</a>
+    <a href="#materi">Materi</a>
+    <a href="#outpit">Outfit</a>
+    <a href="#format">Format</a>
+</nav>
+<!-- PEMBINA -->
+<section id="pembina">
+
+<h2 class="title">Profil Pembina</h2>
+
+<div class="cards">
+
+    <!-- Ketua Gugus Depan -->
+    <div class="card">
+        <img src="pembina.jpeg" alt="Ketua Gugus Depan">
+        <h3>DEDI KUSBANDI M.G</h3>
+        <p><strong>Ketua Gugus Depan</strong></p>
+        <p>Gudep 13.027 - 13.028</p>
+        <p>SMP Negeri 1 Sindang</p>
+    </div>
+
+    <!-- Pembina Putra -->
+    <div class="card">
+        <img src="EKA.jpeg" alt="Pembina Putra">
+        <h3>EKA AMIN HIDAYAT</h3>
+        <p><strong>Pembina Pramuka Putra</strong></p>
+        <p>Gudep 13.027</p>
+        <p>SMP Negeri 1 Sindang</p>
+    </div>
+
+    <!-- Pembina Putri -->
+    <div class="card">
+        <img src="SANTI.jpeg" alt="Pembina Putri">
+        <h3>SANTI ROSMALASARI</h3>
+        <p><strong>Pembina Pramuka Putri</strong></p>
+        <p>Gudep 13.028</p>
+        <p>SMP Negeri 1 Sindang</p>
+    </div>
+
+</div>
+
+</section>
+
+
+</div>
+</div>
+
+</section>
+
+<!-- PRATAMA -->
+<section id="pratama">
+
+<h2 class="title">Pratama Gugus Depan</h2>
+
+<div class="pratama">
+
+<div class="pratama-card">
+<img src="pembina.jpeg" alt="Pratama Putra">
+
+<h3>Pratama Putra</h3>
+
+<p><strong>Nama :</strong> ................................</p>
+
+<p><strong>Kelas :</strong> VIII</p>
+
+<p>
+Pemimpin Regu Putra yang bertugas menjadi teladan,
+mengkoordinasikan anggota putra serta memimpin kegiatan
+kepramukaan di Gugus Depan.
+</p>
+
+</div>
+
+<div class="pratama-card">
+<img src="pembina.jpeg" alt="Pratama Putri">
+
+<h3>Pratama Putri</h3>
+
+<p><strong>Nama :</strong> ................................</p>
+
+<p><strong>Kelas :</strong> VIII</p>
+
+<p>
+Pemimpin Regu Putri yang bertugas menjadi teladan,
+mengkoordinasikan anggota putri serta membantu kelancaran
+seluruh kegiatan Pramuka di Gugus Depan.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===================== PUTRA ===================== -->
+<h2 class="title">9 Anggota DKP Putra</h2>
+
+<div class="cards">
+
+<div class="card">
+<img src="pembina.jpeg" alt="Anggota A">
+<h3>Nama Anggota A</h3>
+<p>Anggota DKP</p>
+<p>Kelas VIII</p>
+</div>
+
+<div class="card">
+<img src="pembina.jpeg" alt="Anggota B">
+<h3>Nama Anggota B</h3>
+<p>Anggota DKP</p>
+<p>Kelas VIII</p>
+</div>
+
+<div class="card">
+<img src="pembina.jpeg" alt="Anggota C">
+<h3>Nama Anggota C</h3>
+<p>Anggota DKP</p>
+<p>Kelas VIII</p>
+</div>
+
+<div class="card">
+<img src="pembina.jpeg" alt="Anggota D">
+<h3>Nama Anggota D</h3>
+<p>Anggota DKP</p>
+<p>Kelas VIII</p>
+</div>
+
+<div class="card">
+<img src="pembina.jpeg" alt="Anggota E">
+<h3>Nama Anggota E</h3>
+<p>Anggota DKP</p>
+<p>Kelas VIII</p>
+</div>
+
+<div class="card">
+<img src="pembina.jpeg" alt="Anggota F">
+<h3>Nama Anggota F</h3>
+<p>Anggota DKP</p>
+<p>Kelas VIII</p>
+</div>
+
+<div class="card">
+<img src="pembina.jpeg" alt="Anggota G">
+<h3>Nama Anggota G</h3>
+<p>Anggota DKP</p>
+<p>Kelas VIII</p>
+</div>
+
+<div class="card">
+<img src="pembina.jpeg" alt="Anggota H">
+<h3>Nama Anggota H</h3>
+<p>Anggota DKP</p>
+<p>Kelas VIII</p>
+</div>
+
+<div class="card">
+<img src="pembina.jpeg" alt="Anggota I">
+<h3>Nama Anggota I</h3>
+<p>Anggota DKP</p>
+<p>Kelas VIII</p>
+</div>
+
+
+</div>
+
+<!-- ===== PEMBATAS ===== -->
+<div style="margin:80px 0;border-top:4px dashed #0d47a1;"></div>
+
+<!-- ===================== PUTRI ===================== -->
+<h2 class="title">9 Anggota DKP Putri</h2>
+
+<div class="cards">
+
+<div class="card">
+<img src="pembina.jpeg" alt="Anggota K">
+<h3>Nama Anggota K</h3>
+<p>Anggota DKP</p>
+<p>Kelas VIII</p>
+</div>
+
+<div class="card">
+<img src="pembina.jpeg" alt="Anggota L">
+<h3>Nama Anggota L</h3>
+<p>Anggota DKP</p>
+<p>Kelas VIII</p>
+</div>
+
+<div class="card">
+<img src="pembina.jpeg" alt="Anggota M">
+<h3>Nama Anggota M</h3>
+<p>Anggota DKP</p>
+<p>Kelas VIII</p>
+</div>
+
+<div class="card">
+<img src="pembina.jpeg" alt="Anggota N">
+<h3>Nama Anggota N</h3>
+<p>Anggota DKP</p>
+<p>Kelas VIII</p>
+</div>
+
+<div class="card">
+<img src="pembina.jpeg" alt="Anggota O">
+<h3>Nama Anggota O</h3>
+<p>Anggota DKP</p>
+<p>Kelas VIII</p>
+</div>
+
+<div class="card">
+<img src="pembina.jpeg" alt="Anggota P">
+<h3>Nama Anggota P</h3>
+<p>Anggota DKP</p>
+<p>Kelas VIII</p>
+</div>
+
+<div class="card">
+<img src="pembina.jpeg" alt="Anggota Q">
+<h3>Nama Anggota Q</h3>
+<p>Anggota DKP</p>
+<p>Kelas VIII</p>
+</div>
+
+<div class="card">
+<img src="pembina.jpeg" alt="Anggota R">
+<h3>Nama Anggota R</h3>
+<p>Anggota DKP</p>
+<p>Kelas VIII</p>
+</div>
+
+<div class="card">
+<img src="pembina.jpeg" alt="Anggota S">
+<h3>Nama Anggota S</h3>
+<p>Anggota DKP</p>
+<p>Kelas VIII</p>
+</div>
+
+
+
+</div>
+
+<!-- MATERI -->
+<section id="materi">
+<h2 class="title">Materi Kepramukaan</h2>
+
+<div class="materi">
+
+<a href="https://nesasinkuberaksi-source.github.io/azimut/">NAVIGASI</a>
+
+
+
+<a href="https://nesasinkuberaksi-source.github.io/PENGERTIANKOMPAS/">SEMAPHORE</a>
+
+
+
+</div>
+</section>
+<!-- ================= GALERI ================= -->
+<<section id="outpit">
+
+<h2 class="title">👕 Outfit Anggota DKP</h2>
+
+<div class="gallery">
+
+    <div class="gallery-item">
+        <img src="FOTO PDL.jpeg" alt="PDL">
+        <div class="gallery-info">
+            <h3>PAKAIAN DINAS LAPANGAN (PDL)</h3>
+            <p>Digunakan saat kegiatan lapangan dan kepanitiaan.</p>
+        </div>
+    </div>
+
+    <div class="gallery-item">
+        <img src="foto latihan.jpeg" alt="Latihan">
+        <div class="gallery-info">
+            <h3>PAKAIAN LATIHAN</h3>
+            <p>Digunakan saat latihan rutin Pramuka.</p>
+        </div>
+    </div>
+
+    <div class="gallery-item">
+        <img src="FORMAL.jpeg" alt="Formal">
+        <div class="gallery-info">
+            <h3>PAKAIAN FORMAL</h3>
+            <p>Digunakan pada kegiatan resmi dan acara formal.</p>
+        </div>
+    </div>
+
+</div>
+
+</div>
+</section>
+
+<section id="format">
+
+<h2 class="title">📄 Berkas Pramuka Garuda</h2>
+
+<div class="materi">
+
+<a href="FORMAT GARUDA.docx" download>
+ Download Berkas Pramuka Garuda (Word)
+</a>
+
+</div>
+
+</section>
+
+</section>
+
+        </div>
+
+    </div>
+</section>
+
+<footer>
+<h3>DKP 2027</h3>
+<p>Pangkalan SMP Negeri 1 Sindang</p>
+<p>AYO KWARNAS SISTEM</p>
+</footer>
+
+<script>
+const cards = document.querySelectorAll('.card');
+
+window.addEventListener('scroll',()=>{
+cards.forEach(card=>{
+const top = card.getBoundingClientRect().top;
+if(top < window.innerHeight-100){
+card.style.opacity="1";
+card.style.transform="translateY(0)";
+}
+});
+});
+
+cards.forEach(card=>{
+card.style.opacity="0";
+card.style.transform="translateY(50px)";
+card.style.transition="1s";
+});
+</script>
+
+</body>
+</html>
